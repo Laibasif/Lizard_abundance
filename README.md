@@ -1,143 +1,96 @@
 🦎 Lizard Abundance Prediction Using Random Forest
-🌍 Overview
-This project applies machine learning techniques to predict the abundance of Sceloporus lizards using environmental, physiological, and chemical features. By training a Random Forest Regressor, we aim to uncover the most impactful variables influencing lizard populations, while leveraging interpretability techniques such as SHAP and correlation analysis. The insights contribute to eco-evolutionary studies by shedding light on species-specific responses to environmental and biochemical conditions.
+Overview
+This project explores the application of machine learning techniques to predict the abundance of lizards based on environmental and ecological data. The model used is Random Forest, which is effective for handling complex, non-linear relationships and allows for analysis of feature importance.
 
 🎯 Key Objectives
-✅ Predict the abundance of lizards using machine learning.
+Predict the abundance of lizards using machine learning.
 
-✅ Understand the influence of environmental and chemical factors on lizard physiology.
+Understand the influence of various environmental and ecological features on lizard populations.
 
-✅ Perform species-specific modeling and visual exploration.
+Provide species-specific modeling and explainability insights.
 
-✅ Provide interpretable insights using SHAP and feature importance.
+Optionally explore the effect of chemical features on lizard abundance.
 
-✅ Support eco-evolutionary biology research with data-driven insights.
+📊 Data
+The dataset is sourced from Dryad: 10.5061/dryad.83bk3j9nr
+It contains 58 rows and various features including:
 
-📊 Dataset
-Source: Dryad Repository
+Environmental Factors: Bio1 (Annual Mean Temp), Bio4 (Seasonality), Bio6 (Precipitation), etc.
 
-Rows: 58 samples
+Species Information: Sceloporus_species, Abundance, Richness, etc.
 
-Features: Includes environmental variables, fatty acids, alcohols, salicylates, physiological data, and more.
+Sample Metadata: Sample_mass, Elevation, Latitude, etc.
 
-📌 Main Feature Categories:
-Environmental:
-Bio1, Bio4, Bio6, Bio12, Bio15, Elevation
+Chemical Compounds (optional): Acids, alcohols, and other biochemical features (e.g., Octadecanoic acid, 1-Nonanol).
 
-Species Metadata:
-Sceloporus_species, Richness, Abundance, Sample_mass
+🧠 Approach
+1. Data Preprocessing
+Loaded and explored dataset in Google Colab.
 
-Chemical Compounds:
-Includes over 30 compounds (e.g., Hexadecanoic acid, Oleic acid, Decanal, 1-Octadecanol, etc.)
+Removed or imputed missing data.
 
-🔧 Approach
-📁 Data Preprocessing
-Loaded and explored data
+Selected relevant features for modeling.
 
-Cleaned missing values
+2. Modeling with Random Forest
+Trained a Random Forest Regressor on the data.
 
-Selected relevant features
-
-Computed correlation heatmap for multicollinearity analysis
-
-🌲 Modeling
-Trained a Random Forest Regressor
-
-Evaluated using:
+Evaluated using R² Score and Mean Squared Error (MSE).
 
 R² Score: 0.396
 
-Mean Squared Error (MSE): 4.63
+MSE: 4.63
 
-Trained model to predict Abundance
+3. Feature Importance & Correlation
+Generated feature importance plots for top predictors.
 
-🔍 Interpretability
-Feature Importance Visualization using sklearn
+Created a correlation heatmap to assess relationships between features.
 
-SHAP (SHapley Additive exPlanations) for individual feature contribution
+4. Species-Specific Modeling
+Grouped data by each lizard species.
 
-Species-Specific Statistics & Plots:
+Visualized sample count and abundance patterns.
 
-Sample counts by species
+Performed correlation analysis per species.
 
-Abundance distribution per species
+5. 🔬 Chemical Feature Analysis (Optional & Fun!)
+Selected only chemical compounds (acids, alcohols, etc.) as features.
 
-Violin/Box plots for visual comparison
+Trained a separate Random Forest model to predict abundance.
 
-📈 Results
-Moderate predictive performance with R² = 0.396
+Compared performance to full-feature model.
 
-Most influential features:
+Visualized chemical-specific feature importances.
 
-Sample_mass
-
-Bio1 (Annual Mean Temp)
-
-Bio6 (Precipitation)
-
-Specific chemical compounds (e.g., Hexadecanoic acid)
-
-SHAP plots provided deep interpretability at global and local levels
-
-📂 Repository Structure
+📁 File Structure
 bash
 Copy
 Edit
-📁 data/
-    └── 12sppPCM_DRYAD.csv           # Input dataset
-📁 visualizations/
-    ├── feature_importance.png       # Top features plot
-    ├── correlation_heatmap.png      # Heatmap
-    └── shap_summary.png             # SHAP explanations
-📁 results/
-    └── model_output.csv             # Predictions and actual values
-📄 model.py                          # Training + Evaluation script
-📄 requirements.txt                  # Python dependencies
-📄 README.md                         # Project overview
-▶️ How to Run
-Clone this repo
+📂 lizard-abundance-prediction/
+│
+├── lizard_abundance_colab.ipynb     # Main analysis and model notebook (Google Colab)
+├── chemical_feature_importance.png  # Feature importance plot for chemical model
+├── visualizations/                  # Folder with model evaluation & SHAP plots
+└── README.md                        # This file
+▶️ Usage
+To run the project:
 
-bash
-Copy
-Edit
-git clone https://github.com/your-username/lizard-abundance-prediction.git
-cd lizard-abundance-prediction
-Install dependencies
+Open the Colab notebook:
+Google Colab Notebook Link
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the model
+Run all cells to load the data, train models, and generate plots.
 
-bash
-Copy
-Edit
-python model.py
-Check outputs
+All outputs (plots, metrics, SHAP values) will be saved or displayed in the notebook.
 
-Results in: results/
+🔮 Future Work
+Integrate additional features (e.g., genetic or spatial data).
 
-Visuals in: visualizations/
+Try other models like XGBoost or Gradient Boosting.
 
-🔭 Future Work
-🔄 Try other models (e.g., XGBoost, CatBoost, Gradient Boosting)
+Extend the approach to other species or ecosystems.
 
-➕ Add more data or engineered features (e.g., interactions, seasonality)
+👤 Contributors
+Laiba Asif – Data science, modeling, visualization
 
-🌐 Extend analysis to other reptile species or broader ecological datasets
-
-🧪 Integrate statistical tests to support biological hypotheses
-
-👩‍🔬 Contributors
-Laiba Asif – Author and Data Science Lead
-
-Open for collaboration! Feel free to fork, star, or open an issue ✨
-
-
-
-
-
-
+Feel free to fork, star ⭐, or contribute via pull requests or issues!
 
 
