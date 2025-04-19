@@ -1,95 +1,143 @@
-**Lizard Abundance Prediction Using Random Forest**
-
-**Overview**
-
+🦎 Lizard Abundance Prediction Using Random Forest
+🌍 Overview
 This project applies machine learning techniques to predict the abundance of Sceloporus lizards using environmental, physiological, and chemical features. By training a Random Forest Regressor, we aim to uncover the most impactful variables influencing lizard populations, while leveraging interpretability techniques such as SHAP and correlation analysis. The insights contribute to eco-evolutionary studies by shedding light on species-specific responses to environmental and biochemical conditions.
 
-**Key Objectives**
+🎯 Key Objectives
+✅ Predict the abundance of lizards using machine learning.
 
-Predict the abundance of lizards using machine learning.
+✅ Understand the influence of environmental and chemical factors on lizard physiology.
 
-Understand the influence of environmental and physiological factors on abundance.
+✅ Perform species-specific modeling and visual exploration.
 
-Perform species-specific modeling and visual exploration.
+✅ Provide interpretable insights using SHAP and feature importance.
 
-Provide interpretable insights using SHAP and feature importance.
+✅ Support eco-evolutionary biology research with data-driven insights.
 
-**Data**
+📊 Dataset
+Source: Dryad Repository
 
-The dataset used in this project is from Dryad: https://datadryad.org/dataset/doi:10.5061/dryad.83bk3j9nr and contains 58 rows and several features, including environmental variables (temperature, elevation, etc.), species data, and chemical compounds.
+Rows: 58 samples
 
-**Main Feature Categories:**
+Features: Includes environmental variables, fatty acids, alcohols, salicylates, physiological data, and more.
 
-**Environmental:**
+📌 Main Feature Categories:
+Environmental:
 Bio1, Bio4, Bio6, Bio12, Bio15, Elevation
 
-**Physiological & Metadata:**
-Sample_mass, Richness, Abundance, Sceloporus_species
+Species Metadata:
+Sceloporus_species, Richness, Abundance, Sample_mass
 
-**Approach**
+Chemical Compounds:
+Includes over 30 compounds (e.g., Hexadecanoic acid, Oleic acid, Decanal, 1-Octadecanol, etc.)
 
-**📁 Data Preprocessing
-Loaded and explored data**
+🔧 Approach
+📁 Data Preprocessing
+Loaded and explored data
 
-Cleaned and filtered relevant features
+Cleaned missing values
 
-Computed a correlation heatmap to analyze feature relationships
+Selected relevant features
 
-**Modeling**
-Trained a Random Forest Regressor on selected features
+Computed correlation heatmap for multicollinearity analysis
 
-**Evaluation metrics:
-**
+🌲 Modeling
+Trained a Random Forest Regressor
+
+Evaluated using:
+
 R² Score: 0.396
 
 Mean Squared Error (MSE): 4.63
 
-**Predicted the Abundance column**
+Trained model to predict Abundance
 
-**📊 Analysis & Explainability**
+🔍 Interpretability
+Feature Importance Visualization using sklearn
 
-Feature Importance Plot from the Random Forest model
+SHAP (SHapley Additive exPlanations) for individual feature contribution
 
-SHAP (SHapley Additive exPlanations) for global/local feature impact
+Species-Specific Statistics & Plots:
 
-**Species-Specific Exploration:**
+Sample counts by species
 
-Count of samples per species
+Abundance distribution per species
 
-Summary statistics
+Violin/Box plots for visual comparison
 
-Visualizations per species (e.g., abundance distributions)
+📈 Results
+Moderate predictive performance with R² = 0.396
 
-**📈 Results**
-
-Moderate model performance with R² = 0.396
-
-**Important predictors:**
+Most influential features:
 
 Sample_mass
 
-Bio1 (Annual Mean Temperature)
+Bio1 (Annual Mean Temp)
 
 Bio6 (Precipitation)
 
-Visuals like feature importance, SHAP summaries, and correlation heatmap provide further insights
+Specific chemical compounds (e.g., Hexadecanoic acid)
 
-**How to Use**
+SHAP plots provided deep interpretability at global and local levels
 
-Open the Google Colab Notebook
+📂 Repository Structure
+bash
+Copy
+Edit
+📁 data/
+    └── 12sppPCM_DRYAD.csv           # Input dataset
+📁 visualizations/
+    ├── feature_importance.png       # Top features plot
+    ├── correlation_heatmap.png      # Heatmap
+    └── shap_summary.png             # SHAP explanations
+📁 results/
+    └── model_output.csv             # Predictions and actual values
+📄 model.py                          # Training + Evaluation script
+📄 requirements.txt                  # Python dependencies
+📄 README.md                         # Project overview
+▶️ How to Run
+Clone this repo
 
-Upload the dataset: 12sppPCM_DRYAD.csv
+bash
+Copy
+Edit
+git clone https://github.com/your-username/lizard-abundance-prediction.git
+cd lizard-abundance-prediction
+Install dependencies
 
-Run the cells sequentially to:
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Run the model
 
-Preprocess data
+bash
+Copy
+Edit
+python model.py
+Check outputs
 
-Train model
+Results in: results/
 
-Visualize and interpret results
+Visuals in: visualizations/
 
-**Laiba Asif – Project Lead & Developer**
-**Contributions and suggestions are welcome!**
+🔭 Future Work
+🔄 Try other models (e.g., XGBoost, CatBoost, Gradient Boosting)
+
+➕ Add more data or engineered features (e.g., interactions, seasonality)
+
+🌐 Extend analysis to other reptile species or broader ecological datasets
+
+🧪 Integrate statistical tests to support biological hypotheses
+
+👩‍🔬 Contributors
+Laiba Asif – Author and Data Science Lead
+
+Open for collaboration! Feel free to fork, star, or open an issue ✨
+
+
+
+
+
 
 
 
