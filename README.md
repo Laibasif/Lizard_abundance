@@ -1,6 +1,6 @@
 **🦎 Lizard Abundance Prediction Using Random Forest**
 
-**Overview**
+**🌍Overview**
 
 This project applies machine learning techniques to predict the abundance of Sceloporus lizards using environmental, physiological, and chemical features. By training a Random Forest Regressor, we aim to uncover the most impactful variables influencing lizard populations, while leveraging interpretability techniques such as SHAP and correlation analysis. The insights contribute to eco-evolutionary studies by shedding light on species-specific responses to environmental and biochemical conditions.
 
@@ -89,7 +89,7 @@ Run all cells to load the data, train models, and generate plots.
 
 All outputs (plots, metrics, SHAP values) will be saved or displayed in the notebook.
 
-**👤 Contributor**
+**👩‍🔬 Contributor**
 Laiba Asif – Data science, modeling, visualization
 
 Feel free to fork, star ⭐, or contribute via pull requests or issues!
