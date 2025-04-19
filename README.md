@@ -60,8 +60,6 @@ Grouped data by each lizard species.
 
 Visualized sample count and abundance patterns.
 
-Performed correlation analysis per species.
-
 **5. 🔬 Chemical Feature Model**
 
 Selected Chemical Features:
