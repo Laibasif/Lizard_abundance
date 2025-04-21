@@ -48,7 +48,7 @@ This project applies machine learning techniques to predict the **abundance of S
 - Grouped data by each lizard species.
 - Visualized sample count and abundance patterns.
 
-### 5. 🔬 Chemical Feature Model (Optional)
+### 5. 🔬 Chemical Feature Model
 Focused solely on chemical compounds to understand their predictive power.
 
 #### Selected Chemical Features:
